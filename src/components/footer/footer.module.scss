@@ -1,0 +1,25 @@
+.footer {
+  color: var(--clr-dark);
+  height: 182px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 35px;
+
+  a > * {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.copyright {
+  font-size: 14px;
+}

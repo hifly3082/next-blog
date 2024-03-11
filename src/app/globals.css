@@ -1,4 +1,31 @@
 :root {
+  --clr-black: rgba(0, 0, 0, 1);
+  --clr-dark: rgba(33, 36, 61, 1);
+  --clr-light: rgba(224, 224, 224, 1);
+  --clr-primary: rgba(255, 100, 100, 1);
+  --clr-secondary: rgba(0, 168, 204, 1);
+  --clr-bg-light: rgba(255, 255, 255, 1);
+  --clr-bg-blue: rgba(237, 247, 250, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-bg-light);
+  color: var(--clr-dark);
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -104,4 +131,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */

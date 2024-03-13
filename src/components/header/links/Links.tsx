@@ -19,7 +19,6 @@ const links = [
 
 const Links = () => {
   const [open, setOpen] = useState(false)
-  // const session = true
 
   const toggleOpen = () => {
     setOpen((prev) => !prev)
@@ -32,11 +31,6 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
-        {/* {session ? (
-          <button className={styles.logoutButton}>Logout</button>
-        ) : (
-          <NavLink item={{ title: 'Login', path: '/login' }} />
-        )} */}
       </div>
 
       {/* MOBILE */}
@@ -45,13 +39,14 @@ const Links = () => {
         onClick={toggleOpen}>
         <span></span>
       </button>
-      {open && (
-        <div className={styles.mobileLinks}>
-          {links.map((link) => (
-            <NavLink item={link} key={link.title} />
-          ))}
-        </div>
-      )}
+
+      <div
+        className={classNames(styles.mobileLinks, open && styles.activeNav)}
+        onClick={toggleOpen}>
+        {links.map((link) => (
+          <NavLink item={link} key={link.title} />
+        ))}
+      </div>
     </>
   )
 }

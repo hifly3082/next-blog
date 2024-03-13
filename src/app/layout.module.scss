@@ -4,9 +4,11 @@
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
   transition: all 0.2s ease;
+}
+
+.main {
+  flex: 1;
 }
 
 // @media (max-width: 1536px) {

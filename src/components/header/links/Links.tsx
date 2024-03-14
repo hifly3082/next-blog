@@ -12,8 +12,8 @@ export interface LinkI {
 
 const links = [
   { title: 'Home', path: '/' },
-  { title: 'Works', path: '/works' },
   { title: 'Blog', path: '/blog' },
+  { title: 'Works', path: '/works' },
   { title: 'Contact', path: '/contact' }
 ]
 

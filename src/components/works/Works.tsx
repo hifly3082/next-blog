@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import styles from './works.module.scss'
 import classNames from 'classnames'
+import styles from './works.module.scss'
 
 const Works = () => {
   return (

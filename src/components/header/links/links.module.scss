@@ -34,14 +34,15 @@
     top: 0;
     right: 0;
     background-color: var(--clr-blue-transparent);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     width: 100%;
     height: 100dvh;
+    font-size: var(--fs-30);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 5rem;
     transform: translateX(200%);
     transition: all 0.4s cubic-bezier(0.78, 0.34, 0.1, 1);
   }

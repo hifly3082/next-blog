@@ -50,20 +50,10 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  font-size: var(--fs-44);
-}
-h2 {
-  font-size: var(--fs-22);
-}
-h3 {
-  font-size: var(--fs-24);
-}
-
 .container {
   max-width: 860px;
   margin: 0 auto;
-  padding: 2rem 0.5rem;
+  padding: 30px 12px;
 
   .flex {
     display: flex;
@@ -73,9 +63,18 @@ h3 {
       flex-direction: column;
     }
   }
+
+  .flex.hero {
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      text-align: center;
+      align-items: center;
+    }
+  }
 }
 
 .section-title {
   font-size: var(--fs-22);
+  font-weight: 400;
   line-height: 60px;
 }

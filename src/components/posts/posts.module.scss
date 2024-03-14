@@ -21,10 +21,14 @@
 
   .title {
     font-size: var(--fs-26);
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 17px;
   }
 
   .info {
     display: flex;
     gap: 24px;
+    margin-bottom: 12px;
   }
 }

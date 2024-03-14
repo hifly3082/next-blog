@@ -73,6 +73,14 @@ a {
   }
 }
 
+.container-md {
+  max-width: 680px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    padding-inline: 18px;
+  }
+}
+
 .section-title {
   font-size: var(--fs-22);
   font-weight: 400;

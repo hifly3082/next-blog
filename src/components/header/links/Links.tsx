@@ -4,6 +4,9 @@ import { useState } from 'react'
 import NavLink from './NavLink'
 import styles from './links.module.scss'
 import classNames from 'classnames'
+import { useAppDispatch } from '@/store/store'
+import { setAuthState } from '@/store/authSlice'
+import { redirect } from 'next/navigation'
 
 export interface LinkI {
   title: string
@@ -19,9 +22,15 @@ const links = [
 
 const Links = () => {
   const [open, setOpen] = useState(false)
+  const dispatch = useAppDispatch()
 
   const toggleOpen = () => {
     setOpen((prev) => !prev)
+  }
+
+  const handleLogout = () => {
+    dispatch(setAuthState(false))
+    redirect('/login')
   }
 
   return (
@@ -31,6 +40,9 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
+        <button className='logout' onClick={handleLogout}>
+          Logout
+        </button>
       </div>
 
       {/* MOBILE */}
@@ -46,6 +58,9 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
+        <button className='logout' onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </>
   )

@@ -1,0 +1,115 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 320px;
+  padding: 2rem 1.5rem 3rem;
+  border-radius: 10px;
+  background-color: var(--clr-bg-blue);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: hidden;
+  transition: transform 300ms, box-shadow 300ms;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  &::before {
+    left: 50%;
+    bottom: -120%;
+    background-color: var(--clr-grey);
+    animation: waves 15s infinite linear;
+  }
+
+  &::after {
+    left: 55%;
+    bottom: -125%;
+    background-color: var(--clr-secondary);
+    animation: waves 14s infinite linear;
+  }
+
+  .input {
+    display: block;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: var(--fs-16);
+    background: var(--clr-white);
+    width: 100%;
+    border: 0;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+// .label {
+//   position: absolute;
+//   pointer-events: none;
+//   transition: all 0.3s ease;
+//   font-size: var(--fs-16);
+//   color: var(--clr-dark);
+//   z-index: 50;
+// }
+
+.submit {
+  cursor: pointer;
+  color: var(--clr-white);
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100%;
+
+  border: 0;
+
+  padding: 12px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background-color: var(--clr-primary);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-dark);
+  }
+}
+
+.forgot {
+  text-decoration: none;
+  color: var(--clr-dark);
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  font-size: 12px;
+  transition: 0.3s all ease;
+
+  &:hover {
+    color: var(--clr-primary);
+  }
+}
+
+@keyframes waves {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

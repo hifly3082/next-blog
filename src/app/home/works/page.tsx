@@ -8,12 +8,7 @@ const WorksPage = () => {
       <h1 className={styles.pageTitle}>Work</h1>
       <div className={classNames('flex', styles.workCard)}>
         <div className={styles.image}>
-          <Image
-            src='/work1.png'
-            alt='work1'
-            // sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            fill
-          />
+          <Image src='/work1.png' alt='work1' suppressHydrationWarning fill />
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>Designing Dashboard</h3>
@@ -30,7 +25,7 @@ const WorksPage = () => {
       </div>
       <div className={classNames('flex', styles.workCard)}>
         <div className={styles.image}>
-          <Image src='/work2.png' alt='work2' fill />
+          <Image src='/work2.png' alt='work2' fill suppressHydrationWarning />
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>Vibrant Portraits of 2020</h3>
@@ -47,7 +42,7 @@ const WorksPage = () => {
       </div>
       <div className={classNames('flex', styles.workCard)}>
         <div className={styles.image}>
-          <Image src='/work3.png' alt='work3' fill />
+          <Image src='/work3.png' alt='work3' fill suppressHydrationWarning />
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>36 Days of Malayalam type</h3>
@@ -64,7 +59,7 @@ const WorksPage = () => {
       </div>
       <div className={classNames('flex', styles.workCard)}>
         <div className={styles.image}>
-          <Image src='/work4.png' alt='work4' fill />
+          <Image src='/work4.png' alt='work4' fill suppressHydrationWarning />
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>Components</h3>

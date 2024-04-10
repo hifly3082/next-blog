@@ -1,24 +1,41 @@
 'use client'
 
-import { setAuthState } from '@/store/authSlice'
-import { useAppDispatch } from '@/store/store'
-import { redirect } from 'next/navigation'
+import styles from './login.module.scss'
+import Link from 'next/link'
 
-const LoginPage = async () => {
-  const dispatch = useAppDispatch()
-
-  const handleLogin = () => {
-    dispatch(setAuthState(true))
-    redirect('/')
-  }
-
+const LoginPage = () => {
   return (
     <section>
-      <form action={handleLogin}>
-        <input type='email' placeholder='Email' />
-        <input type='password' placeholder='Password' />
-        <br />
-        <button type='submit'>Login</button>
+      <form className={styles.form}>
+        <label htmlFor='username' className={styles.label}>
+          Username
+        </label>
+        <input
+          type='text'
+          id='username'
+          name='username'
+          autoComplete='off'
+          className={styles.input}
+        />
+
+        <label htmlFor='password' className={styles.label}>
+          Password
+        </label>
+        <input
+          type='password'
+          id='password'
+          name='password'
+          autoComplete='off'
+          className={styles.input}
+        />
+
+        <button type='submit' className={styles.submit}>
+          Log In
+        </button>
+        <div className={styles.links}></div>
+        <Link href='/forgot-password' className={styles.forgot}>
+          Forgot password?
+        </Link>
       </form>
     </section>
   )

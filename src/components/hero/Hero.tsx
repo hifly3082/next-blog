@@ -6,7 +6,12 @@ const Hero = () => {
     <section className='container'>
       <div className='flex hero'>
         <div className={styles.image}>
-          <Image src='/photo.png' alt='hero-image' fill />
+          <Image
+            src='/photo.png'
+            alt='hero-image'
+            fill
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          />
         </div>
         <div className={styles.header}>
           <h1 className={styles.title}>

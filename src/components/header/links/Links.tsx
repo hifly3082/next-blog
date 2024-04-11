@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import classNames from 'classnames'
 import NavLink from './NavLink'
 import styles from './links.module.scss'
-import classNames from 'classnames'
 
 export interface LinkI {
   title: string
@@ -31,7 +31,6 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
-        <button className={styles.logout}>Logout</button>
       </div>
 
       {/* MOBILE */}
@@ -47,7 +46,6 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
-        <button className={styles.logout}>Logout</button>
       </div>
     </>
   )

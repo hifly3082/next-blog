@@ -1,4 +1,21 @@
-const SinglePostPage = ({ params }: { params: { postId: string } }) => {
-  return <div>Post {params.postId}</div>
+async function getPostById(postId: string) {
+  const response = await fetch(`http://localhost:3000/api/posts/${postId}`, {
+    method: 'GET'
+  })
+
+  return response.json()
 }
-export default SinglePostPage
+
+const PostId = async ({ params }: { params: { postId: string } }) => {
+  const { post } = await getPostById(params.postId)
+
+  return (
+    <div>
+      <p>Post {params.postId}</p>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  )
+}
+
+export default PostId

@@ -11,15 +11,12 @@ const Header = async () => {
     <header className={styles.header}>
       {!isAuth ? (
         <div className={styles.profile}>
-          <Link href='/login'>Log In</Link>
-          <Link href='/signup'>Sign Up</Link>
+          <Link href='/sign-in'>Log In</Link>
+          <Link href='/sign-up'>Sign Up</Link>
         </div>
       ) : (
         <div className={styles.profile}>
           <UserButton afterSignOutUrl='/sign-in' />
-          <Link href='/profile' className={styles.link}>
-            Profile
-          </Link>
         </div>
       )}
       <Links />

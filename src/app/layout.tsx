@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
 import { Heebo } from 'next/font/google'
 import { ClerkProvider, ClerkLoaded, ClerkLoading, auth } from '@clerk/nextjs'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
+import Loader from './../components/loader/Loader'
 import styles from './layout.module.scss'
 import './globals.scss'
-import Loader from './../components/loader/Loader'
 
 const heebo = Heebo({ subsets: ['latin'] })
 
@@ -20,13 +22,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { userId } = await auth()
-  const isAuth = !!userId
-
   return (
     <ClerkProvider>
       <html lang='en' suppressHydrationWarning={true}>
-        <body className={heebo.className}>
+        <body className={heebo.className} suppressHydrationWarning={true}>
           <div className={styles.container}>
             <ClerkLoading>
               <Loader />
@@ -36,6 +35,7 @@ export default async function RootLayout({
               <main className={styles.main}>{children}</main>
               <Footer />
             </ClerkLoaded>
+            <ToastContainer />
           </div>
         </body>
       </html>

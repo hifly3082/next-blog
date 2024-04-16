@@ -1,0 +1,32 @@
+.post {
+  background-color: var(--clr-white);
+  box-shadow: 0 4px 10px 0 var(--shadow);
+  border-radius: 4px;
+  padding: 1.375rem 1.5rem;
+
+  .title {
+    font-size: var(--fs-26);
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 1rem;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--clr-primary);
+      transform: translateX(0.2rem);
+    }
+  }
+
+  .info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .lineClamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+}

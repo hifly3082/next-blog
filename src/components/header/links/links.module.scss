@@ -4,15 +4,6 @@
   margin: 1rem 3rem 0 0;
 }
 
-// .logoutButton {
-//   padding: 0.5rem 1rem;
-//   color: var(--clr-text-100);
-//   background: transparent;
-//   border: 1px solid var(--clr-500);
-//   border-radius: 100vw;
-//   cursor: pointer;
-// }
-
 .menuButton,
 .mobileLinks {
   display: none;
@@ -31,6 +22,7 @@
 
   .mobileLinks {
     position: fixed;
+    z-index: 50;
     top: 0;
     right: 0;
     background-color: var(--clr-blue-transparent);

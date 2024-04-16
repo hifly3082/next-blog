@@ -1,30 +1,29 @@
 .pageTitle {
   font-size: var(--fs-44);
   font-weight: 900;
-  line-height: 60px;
-  margin-block: 55px;
+  margin-block: 3.5rem;
 
   @media (max-width: 768px) {
-    margin-block: 24px 13px;
+    margin-block: 1.5rem 1rem;
   }
 }
 
 .workCard {
-  padding-block: 43px 48px;
+  padding-block: 2.6rem 3rem;
   border-bottom: 1px solid var(--clr-grey);
 
   @media (max-width: 768px) {
-    padding-block: 22px 18px;
+    padding-block: 1.375rem 1.125rem;
   }
 
   .image {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 11.25rem;
     z-index: -1;
 
     @media (max-width: 768px) {
-      height: 230px;
+      height: 14.375rem;
     }
 
     img {
@@ -35,13 +34,12 @@
 
   .info {
     div {
-      margin-bottom: 6px;
+      margin-bottom: 0.375rem;
     }
 
     .title {
       font-size: var(--fs-30);
       font-weight: 700;
-      line-height: 44px;
       cursor: pointer;
 
       @media (max-width: 768px) {
@@ -57,8 +55,8 @@
       font-size: var(--fs-18);
       line-height: 60px;
       font-weight: 900;
-      padding-inline: 12px;
-      margin-right: 22px;
+      padding-inline: 0.75rem;
+      margin-right: 1.5rem;
 
       @media (max-width: 768px) {
         font-size: var(--fs-16);

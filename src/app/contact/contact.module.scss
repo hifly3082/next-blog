@@ -1,77 +1,112 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 20px;
+.pageTitle {
+  font-size: var(--fs-44);
+  font-weight: 900;
+  margin-block: 3.5rem;
+  text-align: center;
+  @media (max-width: 768px) {
+    margin-block: 1.5rem 1rem;
+  }
+}
+
+.group {
   position: relative;
-  background-color: var(--clr-bg-blue);
-  color: #fff;
-}
-
-.message {
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.flex {
-  display: flex;
-  width: 100%;
-  gap: 6px;
-}
-
-.form label {
-  position: relative;
-}
-
-.form label .input {
-  color: #fff;
-  width: 100%;
-  padding: 20px 05px 05px 10px;
-  outline: 0;
-  border: none;
-  border-radius: 10px;
-}
-
-.form label .input + span {
-  color: var(--clr-blue-transparent);
-  position: absolute;
-  left: 10px;
-  top: 0px;
-  font-size: 0.9em;
-  cursor: text;
-  transition: 0.3s ease;
-}
-
-.form label .input:placeholder-shown + span {
-  top: 12.5px;
-  font-size: 0.9em;
-}
-
-.form label .input:focus + span,
-.form label .input:valid + span {
-  color: var(--clr-secondary);
-  top: 0px;
-  font-size: 0.7em;
-  font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 .input {
-  font-size: medium;
-}
-
-.submit {
+  font-size: var(--fs-16);
+  padding: 0.4rem 0;
+  display: block;
+  width: 100%;
   border: none;
   outline: none;
-  padding: 10px;
-  border-radius: 10px;
-  color: var(--clr-white);
-  font-size: 16px;
-  transform: 0.3s ease;
-  background-color: var(--clr-secondary);
+  border-bottom: 1px solid var(--clr-light);
+  color: var(--clr-light);
+  opacity: 0.5;
+  transition: 0.3s all ease;
 }
 
-.submit:hover {
-  background-color: var(--clr-primary);
+.input:focus {
+  outline: none;
+  opacity: 1;
+  border-bottom: 1px solid var(--clr-primary);
+}
+
+.label {
+  color: var(--clr-light);
+  font-size: var(--fs-14);
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0.5rem;
+  top: 0.5rem;
+  opacity: 0.5;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ .label,
+input:valid ~ .label {
+  top: -1.2rem;
+  font-size: var(--fs-14);
+  color: var(--clr-light);
+  opacity: 1;
+}
+
+.sendBtn {
+  cursor: pointer;
+  color: var(--clr-white);
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 100%;
+  border: 0;
+  background-color: var(--clr-dark);
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-primary);
+  }
+
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: 2;
+    opacity: 0.5;
+  }
+
+  &::before {
+    left: 80%;
+    bottom: -20%;
+    background-color: var(--clr-grey);
+    animation: waves 15s infinite linear;
+  }
+
+  &::after {
+    left: 75%;
+    bottom: -25%;
+    background-color: var(--clr-secondary);
+    animation: waves 12s infinite linear;
+  }
+}
+
+@keyframes waves {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

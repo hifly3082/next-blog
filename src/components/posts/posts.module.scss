@@ -1,5 +1,6 @@
 .bg_blue {
   background-color: var(--clr-bg-blue);
+  width: 100%;
 }
 
 .header {
@@ -7,9 +8,14 @@
   align-items: center;
   justify-content: space-between;
 
-  a {
+  .link {
     color: var(--clr-secondary);
     font-size: var(--fs-16);
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+      color: var(--clr-secondary-dark);
+    }
   }
 }
 
@@ -24,6 +30,12 @@
     font-weight: 700;
     line-height: 38px;
     margin-bottom: 17px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--clr-primary);
+      transform: translateX(0.2rem);
+    }
   }
 
   .info {

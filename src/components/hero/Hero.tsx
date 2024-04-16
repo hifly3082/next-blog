@@ -7,10 +7,11 @@ const Hero = () => {
       <div className='flex hero'>
         <div className={styles.image}>
           <Image
-            src='/photo.png'
+            src='/photo.webp'
             alt='hero-image'
             fill
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            priority
+            sizes='(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 33vw'
           />
         </div>
         <div className={styles.header}>
@@ -23,7 +24,9 @@ const Hero = () => {
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </p>
-          <button className={styles.cta}>Download Resume</button>
+          <button type='button' className={styles.cta}>
+            Download Resume
+          </button>
         </div>
       </div>
     </section>

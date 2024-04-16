@@ -26,7 +26,9 @@
   --clr-dark: rgba(33, 36, 61, 1);
   --clr-light: rgba(134, 149, 164, 1);
   --clr-primary: rgba(255, 100, 100, 1);
+  --clr-primary-dark: rgb(200, 85, 85);
   --clr-secondary: rgba(0, 168, 204, 1);
+  --clr-secondary-dark: rgb(0, 135, 165);
   --clr-bg-blue: rgba(237, 247, 250, 1);
   --clr-blue-transparent: rgba(237, 247, 250, 0.5);
 
@@ -42,14 +44,7 @@
 body {
   background-color: var(--clr-white);
   color: var(--clr-dark);
-  font-family: sans-serif;
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  font-display: sans-serif;
 }
 
 a {

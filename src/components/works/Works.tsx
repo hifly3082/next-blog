@@ -11,8 +11,9 @@ const Works = () => {
           <Image
             src='/work1.png'
             alt='work1'
-            // sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             fill
+            priority
           />
         </div>
         <div className={styles.info}>
@@ -30,7 +31,12 @@ const Works = () => {
       </div>
       <div className={classNames('flex', styles.workCard)}>
         <div className={styles.image}>
-          <Image src='/work2.png' alt='work1' fill />
+          <Image
+            src='/work2.png'
+            alt='work2'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            fill
+          />
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>Vibrant Portraits of 2020</h3>
@@ -47,7 +53,12 @@ const Works = () => {
       </div>
       <div className={classNames('flex', styles.workCard)}>
         <div className={styles.image}>
-          <Image src='/work3.png' alt='work1' fill />
+          <Image
+            src='/work3.png'
+            alt='work3'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            fill
+          />
         </div>
         <div className={styles.info}>
           <h3 className={styles.title}>36 Days of Malayalam type</h3>

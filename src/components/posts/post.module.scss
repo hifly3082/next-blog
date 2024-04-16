@@ -1,0 +1,40 @@
+.bg_blue {
+  background-color: var(--clr-bg-blue);
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    color: var(--clr-secondary);
+    font-size: var(--fs-16);
+  }
+}
+
+.post {
+  background-color: var(--clr-white);
+  border-radius: 4px;
+  padding: 1.375rem 1.5rem;
+
+  .title {
+    font-size: var(--fs-26);
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 17px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--clr-primary);
+      transform: translateX(0.2rem);
+    }
+  }
+
+  .info {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+  }
+}

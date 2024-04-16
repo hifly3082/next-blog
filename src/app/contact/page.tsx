@@ -1,64 +1,90 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, FormEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { toast } from 'react-toastify'
 import styles from './contact.module.scss'
 
+interface InputProps {
+  name: string
+  type: string
+  label: string
+  className: string
+  required: boolean
+}
+
 const Contact = () => {
-  const form = useRef()
+  const [isSubmit, setIsSubmit] = useState(false)
+  const form = useRef<HTMLFormElement>(null)
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
+    setIsSubmit(true)
     emailjs
-      .sendForm('service_1n6ur22', 'template_6ljxed4', form.current, {
-        publicKey: 'e9NDfAo7shMdtQHdr'
-      })
+      .sendForm(
+        'service_1n6ur22',
+        'template_b66z2l6',
+        form.current!,
+        'e9NDfAo7shMdtQHdr'
+      )
       .then(
         () => {
-          console.log('SUCCESS!')
+          toast.success('Message sent')
+          setIsSubmit(false)
         },
         (error) => {
-          console.log('FAILED...', error.text)
+          toast.error(`There was an error ${error}. Please try again`)
+          setIsSubmit(false)
         }
       )
-    e.target.reset()
+    if (form.current) {
+      form.current.reset()
+    }
   }
 
+  const Input = ({ className, name, type, label, required }: InputProps) => (
+    <div className={styles.group}>
+      <input
+        name={name}
+        type={type}
+        className={className}
+        required={required}
+        autoComplete='off'
+      />
+      <label className={styles.label}>{label}</label>
+    </div>
+  )
+
   return (
-    <form ref={form} onSubmit={sendEmail} className={styles.form}>
-      {/* <p className='title'>Register </p>
-        <p className='message'>Signup now and get full access to our app. </p> */}
-      <div className={styles.flex}>
-        <label>
-          <input
-            className={styles.input}
-            type='text'
-            name='name'
-            placeholder=''
-          />
-          <span>Your name</span>
-        </label>
-      </div>
-
-      <label>
-        <input
+    <div className='container-md'>
+      <h1 className={styles.pageTitle}>Get in touch</h1>
+      <form ref={form} onSubmit={sendEmail} className={styles.form}>
+        <Input
+          name='name'
+          type='text'
+          label='Name'
           className={styles.input}
-          type='email'
-          name='email'
-          placeholder=''
+          required
         />
-        <span>E-mail</span>
-      </label>
-
-      <label>
-        <textarea className={styles.input} type='password' placeholder='' />
-        <span>Message</span>
-      </label>
-      <button type='submit' value='Send' className={styles.submit}>
-        Submit
-      </button>
-    </form>
+        <Input
+          name='email'
+          type='text'
+          label='E-mail'
+          className={styles.input}
+          required
+        />
+        <Input
+          name='message'
+          type='text'
+          label='Message'
+          className={styles.input}
+          required
+        />
+        <button type='submit' disabled={isSubmit} className={styles.sendBtn}>
+          {isSubmit ? 'Sending...' : 'Send message'}
+        </button>
+      </form>
+    </div>
   )
 }
 

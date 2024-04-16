@@ -35,6 +35,7 @@ const Links = () => {
 
       {/* MOBILE */}
       <button
+        type='button'
         className={classNames(styles.menuButton, open && styles.active)}
         onClick={toggleOpen}>
         <span></span>

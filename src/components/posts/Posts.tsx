@@ -1,4 +1,4 @@
-import PostThumbnail from './PostThumbnail'
+import PostThumbnail, { PostI } from './PostThumbnail'
 import styles from './posts.module.scss'
 
 async function getPosts() {
@@ -30,7 +30,7 @@ const Posts = async () => {
           </a>
         </div>
         <div className='flex'>
-          {posts.map((post) => (
+          {posts.map((post: PostI) => (
             <PostThumbnail post={post} key={post.id} />
           ))}
         </div>

@@ -17,6 +17,8 @@ Design: [Figma](https://www.figma.com/file/gmYHDhmGSwk4u9oojwyYh8/John-%2B?type=
 - As for the authentication process - I chose `Clerk ^4.29` as a straightforward way to implement authentication. I also made possible authentication with OpenID (Google, GitHub providers).
 - The Contact page was missing from the design, so I took over the initiative to create a simple contact form with `emailjs ^4` and `react-tostify` to make it functional.
 
+Deployment: [Next Blog](https://next-blog-mav.vercel.app/)
+
 ### Installation and setup
 
 1. Make sure you have Node.js and npm installed.

@@ -4,6 +4,8 @@ import { ClerkProvider, ClerkLoaded, ClerkLoading, auth } from '@clerk/nextjs'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 import Loader from './../components/loader/Loader'
@@ -35,6 +37,7 @@ export default async function RootLayout({
               <main className={styles.main}>{children}</main>
               <Footer />
             </ClerkLoaded>
+            <SpeedInsights />
             <ToastContainer />
           </div>
         </body>
